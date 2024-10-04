@@ -25,6 +25,14 @@ public class CarrinhoCompras {
         itemList.removeAll(itensParaRemover);
     }
 
+    public void calcularValorTotal(){
+        double total = 0.0;
+        for (Item i : itemList){
+            total += i.getQuantidade() * i.getPreco();
+        }
+        System.out.println("Total: R$ " + total);;
+    }
+
 //    public double calcularValorTotal(){
 //        for (Item i : itemList){
 //            i.total(i.getPreco(), i.getQuantidade());
@@ -34,17 +42,19 @@ public class CarrinhoCompras {
 //    }
 
     public void exibirItens(){
-        System.out.println(itemList);
+        for (Item i : itemList){
+            System.out.println("Item: " + i.getNome() + " Preço: R$ " + i.getPreco() + " Quantidade: " + i.getQuantidade());
+        }
     }
 
     public static void main(String[] args) {
         CarrinhoCompras carrinhoCompras = new CarrinhoCompras();
 
-        carrinhoCompras.adicionarItem("maça", 8.7, 2);
-        carrinhoCompras.adicionarItem("leite", 2.45, 3);
-
+        carrinhoCompras.adicionarItem("Maçã", 8.7, 2);
+        carrinhoCompras.adicionarItem("Leite", 2.45, 3);
+        carrinhoCompras.adicionarItem("Biscoito", 4.56, 5);
         carrinhoCompras.exibirItens();
-//        carrinhoCompras.calcularValorTotal();
+        carrinhoCompras.calcularValorTotal();
 
     }
 

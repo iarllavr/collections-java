@@ -24,8 +24,4 @@ public class Item {
         return quantidade;
     }
 
-    public double total(double preco, int quantidade){
-        return (preco * quantidade);
-    }
-
 }
