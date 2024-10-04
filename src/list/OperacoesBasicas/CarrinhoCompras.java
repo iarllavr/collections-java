@@ -42,9 +42,7 @@ public class CarrinhoCompras {
 //    }
 
     public void exibirItens(){
-        for (Item i : itemList){
-            System.out.println("Item: " + i.getNome() + " Preço: R$ " + i.getPreco() + " Quantidade: " + i.getQuantidade());
-        }
+        System.out.println(itemList);
     }
 
     public static void main(String[] args) {
